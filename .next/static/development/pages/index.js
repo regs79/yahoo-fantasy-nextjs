@@ -63,7 +63,7 @@ function Home() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!***************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fcraig%2Fdev%2Ffun%2Fyahoo-fantasy-nextjs%2Fpages%2Findex.js ***!
   \***************************************************************************************************************************************/
@@ -86,5 +86,5 @@ module.exports = dll_40e5610532f3b6b970d9;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
