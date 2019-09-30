@@ -4,7 +4,7 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  webpack: config => {
+  webpack: (config, { isServer }) => {
     config.plugins = config.plugins || [];
 
     config.plugins = [
@@ -15,6 +15,12 @@ module.exports = {
         systemvars: true
       })
     ];
+
+    if (!isServer) {
+      config.node = {
+        fs: 'empty'
+      }
+    }
 
     return config;
   }

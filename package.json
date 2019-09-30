@@ -4,9 +4,9 @@
   "description": "Demo of a Next.js site pulling data from Yahoo Fantasy via yahoo-fantasy-sports-api",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "node ./src/server.js",
+    "build": "next build ./src",
+    "start": "NODE_ENV=production node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "passport-oauth2": "^1.5.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "request": "^2.88.0",
     "uid-safe": "^2.1.5"
   }
 }
