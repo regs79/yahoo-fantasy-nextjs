@@ -1,5 +1,6 @@
 import React from 'react';
 import App from 'next/app';
+import Nav from '../components/Nav';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -29,7 +30,12 @@ class MyApp extends App {
     };
 
     return (
-      <Component {...props} />
+      <>
+        {this.state.user && <Nav {...props} />}
+        <div className="wrapper">
+          <Component {...props} />
+        </div>
+      </>
     );
   }
 }

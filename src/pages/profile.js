@@ -1,15 +1,23 @@
 function Profile({ user }) {
   return (
     <div>
+      <img src={user.avatar} alt={user.name} />
       <h2>
-        <img src={user.avatar} alt={user.displayName} /> Hello, {user.name}
+         Hi, {user.name}
       </h2>
       <p>This is what we know about you:</p>
       <ul>
         { Object.keys(user).map(key => (
-          <li key={key}>{key}: {user[key].toString()}</li>
+          <li key={key}><strong>{key}:</strong> {user[key].toString()}</li>
         ))}
       </ul>
+      <style jsx>{`
+        li {
+          margin: 0 0 10px 0;
+          width: 100%;
+          word-break: break-all;
+        }
+      `}</style>
     </div>
   );
 }

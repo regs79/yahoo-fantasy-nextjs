@@ -26,11 +26,22 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-
         </Head>
         <body>
           <Main />
           <NextScript />
+          <style global jsx>{`
+            *, *:before, *:after {
+              box-sizing: border-box;
+              font-family: sans-serif;
+            }
+            body {
+              margin: 0;
+            }
+            .wrapper {
+              padding: 20px;
+            }
+          `}</style>
         </body>
       </Html>
     );
