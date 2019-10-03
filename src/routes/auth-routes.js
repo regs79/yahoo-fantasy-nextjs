@@ -23,8 +23,8 @@ router.get('/logout', (req, res) => {
 
   res.redirect(req.session.redirect || '/');
 
-  // const {YAHOO_AUTH_URL, YAHOO_APP_KEY, BASE_URL} = process.env;
-  // res.redirect(`https://${YAHOO_AUTH_URL}/logout?client_id=${YAHOO_APP_KEY}&returnTo=${BASE_URL}`);
+  // const {YAHOO_AUTH_URL, YAHOO_CLIENT_ID, BASE_URL} = process.env;
+  // res.redirect(`https://${YAHOO_AUTH_URL}/logout?client_id=${YAHOO_CLIENT_ID}&returnTo=${BASE_URL}`);
 });
 
 module.exports = router;

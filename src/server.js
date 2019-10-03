@@ -34,8 +34,8 @@ app.prepare().then(() => {
     {
       authorizationURL: process.env.YAHOO_AUTH_URL,
       tokenURL: process.env.YAHOO_TOKEN_URL,
-      clientID: process.env.YAHOO_APP_KEY,
-      clientSecret: process.env.YAHOO_APP_SECRET,
+      clientID: process.env.YAHOO_CLIENT_ID,
+      clientSecret: process.env.YAHOO_CLIENT_SECRET,
       callbackURL: process.env.YAHOO_CALLBACK_URL,
     },
 
@@ -84,7 +84,7 @@ app.prepare().then(() => {
     next();
   };
 
-  server.yf = new YahooFantasy(process.env.YAHOO_APP_KEY, process.env.YAHOO_APP_SECRET);
+  server.yf = new YahooFantasy(process.env.YAHOO_CLIENT_ID, process.env.YAHOO_CLIENT_SECRET);
 
   server.use("/profile", restrictAccess);
 
