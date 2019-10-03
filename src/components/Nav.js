@@ -6,6 +6,7 @@ const Nav = () => {
     <nav>
       <ul>
         <li><Link href="/profile"><a>Profile</a></Link></li>
+        <li><Link href="/games"><a>Games</a></Link></li>
         <li><Link href="/logout"><a>Sign out</a></Link></li>
       </ul>      
       <style jsx>{`

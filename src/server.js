@@ -7,7 +7,7 @@ const passport = require("passport");
 const OAuth2Strategy = require("passport-oauth2");
 const uid = require("uid-safe");
 const authRoutes = require("./routes/auth-routes");
-
+const YahooFantasy = require('yahoo-fantasy');
 const request = require("request");
 const dev = process.env.NODE_ENV !== "production";
 const app = next({
@@ -63,6 +63,8 @@ app.prepare().then(() => {
             refreshToken: refreshToken,
           };
 
+          server.yf.setUserToken(accessToken);
+
           return done(null, userObj);
         }
       });
@@ -82,9 +84,32 @@ app.prepare().then(() => {
     next();
   };
 
+  server.yf = new YahooFantasy(process.env.YAHOO_APP_KEY, process.env.YAHOO_APP_SECRET);
+
   server.use("/profile", restrictAccess);
 
-  // handling everything else with Next.js
+  server.get('/api/games', function(req, res) {
+    server.yf.user.games()
+    .then(function(response) {
+      const games = res.json(response.games);
+      return(games);
+    })
+    .catch(function (error) {
+      console.log('server error getting user games', error)
+    })
+  })
+
+  server.get('/api/teams/:game_key', function(req, res) {
+    server.yf.teams.games(req.params.game_key)
+    .then(function(response) {
+      const teams = res.json(response);
+      return(teams);
+    })
+    .catch(function (error) {
+      console.log('server error getting user teams', error)
+    })
+  })
+
   server.get("*", handle);
 
   http.createServer(server).listen(process.env.PORT, () => {
