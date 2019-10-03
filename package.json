@@ -1,0 +1,36 @@
+{
+  "name": "yahoo-fantasy-nextjs",
+  "version": "1.0.0",
+  "description": "Demo of a Next.js site pulling data from Yahoo Fantasy via yahoo-fantasy-sports-api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/server.js",
+    "build": "next build ./src",
+    "start": "NODE_ENV=production node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regs79/yahoo-fantasy-nextjs.git"
+  },
+  "author": "Craig Regnier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/regs79/yahoo-fantasy-nextjs/issues"
+  },
+  "homepage": "https://github.com/regs79/yahoo-fantasy-nextjs#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "dotenv-webpack": "^1.7.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.0.7",
+    "passport": "^0.4.0",
+    "passport-oauth2": "^1.5.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "request": "^2.88.0",
+    "uid-safe": "^2.1.5",
+    "yahoo-fantasy": "^3.2.0"
+  }
+}
